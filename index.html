@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>سایت شخصی رضا عفتی مقدم</title>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+
+    <audio id="myAudio">
+        <source src="music/Morteza Jafarzade - Dadashi 2 (320).mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Start Setting -->
+    <div class="setting">
+        <div class="setting-icon">
+            <i class="fas fa-cog"></i>
+        </div>
+        <div class="setting-content">
+            <p class="setting-content-title">
+                رنگ قالب
+            </p>
+            <div class="setting-content-colors">
+                <span class="setting-content-colors-item red"    data-color="#d94c48" onclick="Color(this)"></span>
+                <span class="setting-content-colors-item blue"   data-color="#00a3e1" onclick="Color(this)"></span>
+                <span class="setting-content-colors-item green"  data-color="#25ca7f" onclick="Color(this)"></span>
+                <span class="setting-content-colors-item yellow" data-color="#ffcc33" onclick="Color(this)"></span>
+                <span class="setting-content-colors-item cyan"   data-color="#0dcdbd" onclick="Color(this)"></span>
+                <span class="setting-content-colors-item purple" data-color="#bb68c8" onclick="Color(this)"></span>
+            </div>
+        </div>
+    </div>
+    <!-- End Setting -->
+    <!-- Start Menu -->
+    <div class="menu">
+        <ul class="menu-ul">
+            <li class="menu-ul-li"><i class="fas fa-home"></i></li>
+            <li id="li_about" class="menu-ul-li"><i class="fas fa-user-tie"></i></li>
+            <li id="li_skills" class="menu-ul-li"><i class="fas fa-copy"></i></li>
+            <li class="menu-ul-li"><i class="fas fa-envelope"></i></li>
+            <li class="menu-ul-li music"><span class="menu-ul-li-icon"><i class="fas fa-play-circle"></i></span>
+                <span>موزیک</span> </li>
+        </ul>
+    </div>
+    <!-- End Menu -->
+    <!-- <i class="fas fa-pause-circle"></i>-->
+    <!-- Start Home -->
+    <div id="particle-canvas">
+        <div class="home">
+            <h1 class="home-title">رضا عفتی مقدم</h1>
+            <div class="animate home-description">
+                <div id="typed-strings">
+                    <p>برنامه نویس</p>
+                    <p>توسعه دهنده وب</p>
+                    <p>فریلنسر</p>
+                </div>
+                <span id="typed" style="white-space:pre;"></span>
+
+            </div>
+        </div>
+    </div>
+    <!-- End Home -->
+
+    <!-- Start About -->
+    <div class="about">
+        <div class="about-top">
+            <div class="about-top-title">
+                <p>درباره من</p>
+            </div>
+            <div class="about-top-description">
+                <div class="about-top-description-image">
+                    <img class="about-top-description-image-img" src="./image/reza.jpg" alt="رضا عفتی مقدم" />
+                    <img class="img-shadow" src="./image/reza.jpg" /> <!-- shadow -->
+                </div>
+                <div class="about-top-description-content">
+                    <p class="about-top-description-content-title">رضا عفتی مقدم</p>
+                    <p class="about-top-description-content-location"><i class="fas fa-map-marked-alt"></i> بیرجند ،
+                        ایران</p>
+                    <p>رضا عفتی مقدم هستم یه توسعه دهنده ی وب و دانشجوی مهندسی کامپیوتر در <a
+                            href="https://www.birjand.ac.ir/fa" target="_blank">دانشگاه بیرجند</a> </p>
+                    <p>متولد 1378 ساکن بیرجند . برنامه نویسی را از سال 1397 و با ورود به دانشگاه شروع کردم و از تابستان
+                        1398 فعالیت خودم رو به صورت حرفه ای در حوزه وب شروع کردم و تا اکنون ادامه دار بوده است.</p>
+                    <p>در حال حاضر به عنوان توسعه دهنده ی فرانت اند در <a href="http://paarandco.ir/"
+                            target="_blank">مجموعه پارند</a> فعالیت میکنم.</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-bottom">
+            <div class="about-bottom-title">
+                <p>علایق من</p>
+            </div>
+            <div class="about-bottom-description">
+                <p><span><i class="fas fa-code"></i></span> کد زدن</p>
+                <p><span><i class="fas fa-music"></i></span> موزیک</p>
+                <p><span><i class="fab fa-youtube"></i></span> یوتیوب گردی</p>
+            </div>
+        </div>
+    </div>
+    <!-- End About -->
+
+    <!-- Start Contact -->
+    <div class="contact">
+        <div class="contact-title">
+            <p>تماس</p>
+        </div>
+        <div class="contact-links">
+            <p>
+                <span><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                <a href="mailto:effati78@gmail.com">effati78@gmail.com</a>
+                <span>ایمیل</span>
+            </p>
+            <p>
+                <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
+                <a href="#">بیرجند</a>
+                <span>آدرس</span>
+            </p>
+            <p>
+                <span><i class="fas fa-phone-square-alt" aria-hidden="true"></i></span>
+                <a href="tel:09156666794">09156666794</a>
+                <span>تلفن</span>
+            </p>
+        </div>
+    </div>
+    <!-- End Contact -->
+
+    <!-- Start Skills -->
+    <div class="skills">
+        <div class="skills-title">
+            <p>مهارت ها</p>
+        </div>
+        <div class="skills-description">
+            <div class="skills-description-item">
+                <p>HTML</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">95%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>CSS</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 92%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">92%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>JavaScript</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">85%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>jQuery</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">75%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>Bootstrap</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">80%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>Sass</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">85%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>PHP</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 55%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">55%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>MySQL</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">50%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>C++</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">60%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>C#</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 60%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">60%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>WordPress</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">75%</div>
+                </div>
+            </div>
+
+            <div class="skills-description-item">
+                <p>Git</p>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 35%;" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">35%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Skills -->
+
+    <!-- Start JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/js/all.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="js/canvas.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

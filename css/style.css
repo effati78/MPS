@@ -1,0 +1,547 @@
+/*
+**********************************************************
+**           __    __          _     _   _______  ___    **
+**          / _|  / _|        | |   (_)  ____  / / _ \   **
+**    ___  | |_  | |_   __ _  | |_   _      / / | (_) |  **
+**   / _ \ |  _| |  _/ / _` | | __| | |    / /   > _ <   **
+**  |  __/ | |   | |  | (_| | | |_| | |   / /   | (_) |  **
+**   \___| |_|   |_|   \__,_|  \__| |_|  /_/     \___/   **
+**                                                       **
+***********************************************************
+*/
+/* Start general styles */
+@font-face {
+  src: url("../font/aviny-700.woff2");
+  font-family: 'aviny';
+}
+
+@font-face {
+  src: url("../font/iran-yekan-300.woff2");
+  font-family: 'iran-yekan';
+}
+
+@font-face {
+  src: url("../font/iran-yekan-700.woff2");
+  font-family: 'iran-yekan-700';
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-first: #fff;
+  --color-second:  #0E0F10;
+  --color-third: #fc3;
+  --color-fourth: #070708;
+}
+
+a {
+  font-weight: bold;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #7e7e7e;
+  padding: 0 10px;
+  background-color: var(--color-second);
+  transition: all 0.6s;
+}
+
+a:hover {
+  color: var(--color-third);
+  text-decoration: none;
+}
+
+ul, li {
+  list-style-type: none;
+}
+
+body {
+  direction: rtl;
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.red {
+  background-color: #d94c48;
+}
+
+.purple {
+  background-color: #bb68c8;
+}
+
+.blue {
+  background-color: #00a3e1;
+}
+
+.green {
+  background-color: #25ca7f;
+}
+
+.yellow {
+  background-color: #ffcc33;
+}
+
+.cyan {
+  background-color: #0dcdbd;
+}
+
+.img-shadow {
+  width: 100%;
+  height: 100%;
+  filter: blur(6px) contrast(1.5);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* End general styles */
+/* Start custom styles */
+#particle-canvas {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../image/bg.jpg");
+  background-size: cover;
+}
+
+/* Start Setting */
+.setting {
+  border-radius: 0 0 10px 0;
+  position: relative;
+  background-color: var(--color-second);
+  position: absolute;
+  top: 40%;
+  left: -205px;
+  z-index: 999;
+  font-family: 'aviny';
+  color: #fff;
+  padding: 10px;
+  transition: all 0.6s;
+}
+
+.setting-icon {
+  background-color: var(--color-second);
+  position: absolute;
+  top: 0;
+  right: -45px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 10px 15px 10px 10px;
+  border-radius: 0 5px 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setting-content {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.setting-content-title {
+  padding-top: 5px;
+  font-size: 17px;
+}
+
+.setting-content-colors {
+  padding: 10px;
+  border-radius: 10px;
+  width: 100%;
+  background-color: var(--color-fourth);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 185px;
+}
+
+.setting-content-colors-item {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  border-radius: 50%;
+  display: block;
+  cursor: pointer;
+}
+
+/* End Setting */
+/* Start Menu */
+.menu {
+  font-family: 'iran-yekan';
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background-color: rgba(7, 7, 8, 0.5);
+  backdrop-filter: blur(2px);
+  width: 10vw;
+}
+
+.menu-ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-ul-li {
+  cursor: pointer;
+  color: var(--color-first);
+  font-size: 30px;
+  margin: 15px 0;
+  transition: all 0.6s linear !important;
+}
+
+.menu-ul-li:hover {
+  transition: all 0.6s linear !important;
+  color: var(--color-third);
+}
+
+.menu-ul .music {
+  margin-top: 100px;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-ul .music svg {
+  font-size: 25px;
+  margin-bottom: 5px;
+}
+
+/* End Menu */
+/* Start Home */
+.home {
+  margin-right: 5vw;
+  user-select: none;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-first);
+}
+
+.home h1,
+.home p {
+  z-index: 100;
+}
+
+.home-title {
+  font-family: 'aviny';
+  font-size: 55px;
+  font-weight: 0;
+  margin-bottom: 20px;
+}
+
+.home-description {
+  font-family: 'aviny';
+  font-size: 20px;
+}
+
+.home-description #typed {
+  color: var(--color-third);
+  border: none;
+  margin-left: 2px;
+}
+
+/* End Home */
+/* Start About */
+.about {
+  text-align: right;
+  padding: 50px 0;
+  background-color: var(--color-second);
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: -105vw;
+  width: 90vw;
+  height: 100vh;
+  overflow-y: auto;
+  transition: left 0.6s;
+}
+
+.about::-webkit-scrollbar {
+  background-color: var(--color-second);
+  width: 5px;
+}
+
+.about::-webkit-scrollbar-thumb {
+  background-color: var(--color-third);
+}
+
+.about::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-third);
+}
+
+.about::-o-scrollbar {
+  background-color: var(--color-second);
+  width: 5px;
+}
+
+.about::-o-scrollbar-thumb {
+  background-color: var(--color-fourth);
+}
+
+.about::-o-scrollbar-thumb:hover {
+  background-color: var(--color-fourth);
+}
+
+.about-top {
+  color: var(--color-first);
+  background-color: var(--color-second);
+  padding: 20px 100px;
+}
+
+.about-top-title {
+  font-family: 'aviny';
+  text-align: center;
+}
+
+.about-top-title > p {
+  padding: 0 15px 10px 15px;
+  font-size: 35px;
+  display: inline;
+  border-bottom: 2px solid var(--color-third);
+}
+
+.about-top-description {
+  margin-top: 100px;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: var(--color-fourth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-top-description-image {
+  position: relative;
+  border-radius: 50%;
+  min-width: 210px;
+  max-width: 210px;
+  min-height: 210px;
+  max-height: 210px;
+  margin-left: 35px;
+}
+
+.about-top-description-image-img {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-top-description-content {
+  font-family: 'iran-yekan';
+}
+
+.about-top-description-content p {
+  line-height: 33px;
+  font-size: 15px;
+}
+
+.about-top-description-content-title {
+  font-size: 20px !important;
+  font-weight: 0;
+  font-family: 'aviny';
+}
+
+.about-top-description-content-location {
+  font-size: 13px !important;
+  margin: 15px 0;
+  font-weight: 900;
+  color: var(--color-third);
+}
+
+.about-bottom {
+  margin-top: 110px;
+  user-select: none;
+  font-family: 'iran-yekan';
+  color: var(--color-first);
+  background-color: var(--color-second);
+  padding: 20px 100px;
+}
+
+.about-bottom-title {
+  font-family: 'aviny';
+  text-align: center;
+}
+
+.about-bottom-title > p {
+  padding: 0 15px 10px 15px;
+  font-size: 25px;
+  display: inline;
+  border-bottom: 2px solid var(--color-third);
+}
+
+.about-bottom-description {
+  margin-top: 80px;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: var(--color-fourth);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-bottom-description p {
+  font-weight: bold;
+  background-color: var(--color-second);
+  width: 220px;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: right;
+  border-radius: 10px;
+}
+
+.about-bottom-description p span {
+  font-size: 22px;
+  color: var(--color-third);
+  margin-left: 20px;
+  padding: 0 20px;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid var(--color-fourth);
+}
+
+/* End About */
+/* Start Contact */
+.contact {
+  display: none;
+  padding: 50px 0;
+  background-color: var(--color-second);
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90vw;
+  height: 100vh;
+  overflow-y: auto;
+  transition: left 0.6s;
+}
+
+/* End Contact */
+/* Start Skills */
+.skills {
+  direction: rtl;
+  background-color: var(--color-second);
+  color: var(--color-first);
+  padding: 70px 100px;
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: -105vw;
+  width: 90vw;
+  height: 100vh;
+  overflow-y: auto;
+  transition: left 0.6s;
+}
+
+.skills::-webkit-scrollbar {
+  background-color: var(--color-second);
+  width: 5px;
+}
+
+.skills::-webkit-scrollbar-thumb {
+  background-color: var(--color-third);
+}
+
+.skills::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-third);
+}
+
+.skills::-o-scrollbar {
+  background-color: var(--color-second);
+  width: 5px;
+}
+
+.skills::-o-scrollbar-thumb {
+  background-color: var(--color-fourth);
+}
+
+.skills::-o-scrollbar-thumb:hover {
+  background-color: var(--color-fourth);
+}
+
+.skills-title {
+  font-family: 'aviny';
+  text-align: center;
+}
+
+.skills-title > p {
+  padding: 0 15px 10px 15px;
+  font-size: 35px;
+  display: inline;
+  border-bottom: 2px solid var(--color-third);
+}
+
+.skills-description {
+  font-family: 'iran-yekan-700';
+  direction: rtl;
+  text-align: right;
+  margin-top: 100px;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: var(--color-fourth);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.skills-description-item {
+  margin: 10px 2.5%;
+  width: 45%;
+}
+
+.skills-description-item > p {
+  direction: ltr;
+  letter-spacing: 0.5px;
+}
+
+.skills-description-item .progress {
+  background-color: var(--color-second);
+}
+
+.skills-description-item .progress-bar {
+  font-family: 'aviny';
+  font-size: 15px;
+  background-color: var(--color-third);
+  color: var(--color-second);
+}
+
+/* End Skills */
+/* End custom styles */
+/*# sourceMappingURL=style.css.map */
