@@ -114,10 +114,19 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
+            color: $co-third;
+            font-weight: bold;
+
+            & .menu-ul-li-icon{
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
 
             & svg {
                 font-size: 25px;
-                margin-bottom: 5px;
+                border-radius: 50%;
             }
         }
     }
@@ -452,4 +461,18 @@
 }
 
 /* End Skills */
+/* Animation */
+.audio{
+    animation: audio 10s linear infinite;
+    // animation-direction: alternate;
+    color: $co-third;
+}
+
+@keyframes audio{
+    0%{transform: rotate(0deg);}
+    25%{transform: rotate(90deg);}
+    50%{transform: rotate(180deg);}
+    75%{transform: rotate(270deg);}
+    100%{transform: rotate(360deg);}
+}
 /* End custom styles */
