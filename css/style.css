@@ -105,6 +105,23 @@ body {
   background-size: cover;
 }
 
+/* Start Github Link */
+.github {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+  border-radius: 50%;
+  background-color: transparent;
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+/* End Github Link */
 /* Start Setting */
 .setting {
   border-radius: 0 0 10px 0;
@@ -344,7 +361,7 @@ body {
 
 .about-top-description-image {
   position: relative;
-  border-radius: 50%;
+  border-radius: 34% 66% 58% 42% / 37% 50% 50% 63%;
   min-width: 210px;
   max-width: 210px;
   min-height: 210px;
@@ -352,7 +369,13 @@ body {
   margin-left: 35px;
 }
 
+.about-top-description-image .img-shadow {
+  border-radius: 34% 66% 58% 42% / 37% 50% 50% 63%;
+}
+
 .about-top-description-image-img {
+  border: 5px solid var(--color-third);
+  box-shadow: 0 0 50px -35px var(--color-third);
   z-index: 1;
   position: absolute;
   top: 0;
@@ -361,7 +384,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50%;
+  border-radius: 34% 66% 58% 42% / 37% 50% 50% 63%;
   object-fit: cover;
 }
 
@@ -554,7 +577,7 @@ body {
 /* End Skills */
 /* Animation */
 .audio {
-  animation: audio 10s linear infinite;
+  animation: audio 2s linear infinite;
   color: var(--color-third);
 }
 

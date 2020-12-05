@@ -82,7 +82,7 @@ musicDiv.addEventListener("click", function (e) {
     if(audioTemp){
         playAudio();
         music.classList.add("audio");
-        music.innerHTML = '<i class="fas fa-pause"></i>';
+        music.innerHTML = '<i class="fas fa-compact-disc"></i>';
         musicDiv.style.color = 'var(--color-third)';
         audioTemp = false;
     }else{
