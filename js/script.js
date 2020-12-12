@@ -34,27 +34,44 @@ function foo() {
 
 
 /* ---- */
-
-var li_about = document.querySelector("#li_about");
-var li_skills = document.querySelector("#li_skills");
-var about = document.querySelector(".about");
-var skills = document.querySelector(".skills");
+var loading = document.querySelector('.loading');
+var sections = document.getElementsByClassName('section');
+var items = document.getElementsByClassName('item');
+var home_item = document.querySelector('.home-item');
 var music = document.querySelector(".music .menu-ul-li-icon");
 var musicDiv = document.querySelector(".music");
 var audioTemp = false;
 var setting_icon = document.querySelector(".setting-icon");
 var setting = document.querySelector(".setting");
 var audio = new Audio('music/1.mp3');
+var colorDiv = document.querySelector('.color');
+var colAnimate = document.querySelector('.color-animation');
 
-audio.play();
+// var colorTheme = getComputedStyle(document.documentElement).getPropertyValue('--color-third');
+// audio.play();
+
+function loaded() {
+    loading.style.display = 'none';
+}
 
 setting_icon.addEventListener("click", function () {
     setting.style.left = (setting.style.left == "0px") ? "-205px" : "0px";
 });
 
+function colorAnimation() {
+    colorDiv.style.display = 'flex';
+    colAnimate.style.animation = 'color 0.5s linear';
+    setTimeout(function () {
+        colorDiv.style.display = 'none';
+    }, 500);
+}
+
 function Color(x) {
     let color = x.getAttribute('data-color');
+    localStorage.setItem('theme', color);
     document.querySelector(":root").style.setProperty('--color-third', color);
+    setting.style.left = "-205px";
+    colorAnimation();
 }
 
 function playAudio() {
@@ -65,27 +82,38 @@ function pauseAudio() {
     audio.pause();
 }
 
-li_about.addEventListener("click", function (e) {
-    e.preventDefault();
-    about.style.left = (about.style.left == "0px") ? "-105vw" : "0px";
-    li_about.style.color = (li_about.style.color == "var(--color-third)") ? "var(--color-first)" : "var(--color-third)";
-});
+for (let x = 0; x < items.length; x++) {
+    items[x].addEventListener('click', function (e) {
+        e.preventDefault();
+        for (let i = 0; i < sections.length; i++) {
+            sections[i].style.left = '-105vw';
+            items[i].style.color = "var(--color-first)";
+        }
+        home_item.style.color = "var(--color-first)";
+        var attribute = this.getAttribute('data-item');
+        document.querySelector(`.${attribute}`).style.left = '0px';
+        this.style.color = "var(--color-third)";
+    });
+}
 
-li_skills.addEventListener("click", function (e) {
+home_item.addEventListener('click', function (e) {
     e.preventDefault();
-    skills.style.left = (skills.style.left == "0px") ? "-105vw" : "0px";
-    li_skills.style.color = (li_skills.style.color == "var(--color-third)") ? "var(--color-first)" : "var(--color-third)";
+    for (let i = 0; i < sections.length; i++) {
+        sections[i].style.left = '-105vw';
+        items[i].style.color = "var(--color-first)";
+    }
+    home_item.style.color = "var(--color-third)";
 });
 
 musicDiv.addEventListener("click", function (e) {
     e.preventDefault();
-    if(audioTemp){
+    if (audioTemp) {
         playAudio();
         music.classList.add("audio");
         music.innerHTML = '<i class="fas fa-compact-disc"></i>';
         musicDiv.style.color = 'var(--color-third)';
         audioTemp = false;
-    }else{
+    } else {
         pauseAudio();
         music.classList.remove("audio");
         music.innerHTML = '<i class="fas fa-play"></i>';
