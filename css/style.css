@@ -16,8 +16,9 @@
 }
 
 @font-face {
-  src: url("../font/iran-yekan-300.woff2");
+  src: url("../font/IRANSansWeb.ttf");
   font-family: 'iran-yekan';
+  font-weight: 0;
 }
 
 @font-face {
@@ -34,12 +35,11 @@
 :root {
   --color-first: #fff;
   --color-second:  #0E0F10;
-  --color-third: #fc3;
+  --color-third: #25ca7f;
   --color-fourth: #070708;
 }
 
 a {
-  font-weight: bold;
   border-radius: 20px;
   text-decoration: none;
   color: #7e7e7e;
@@ -105,6 +105,87 @@ body {
   background-size: cover;
 }
 
+/* Start Loading */
+.loading {
+  z-index: 1000;
+  background-color: var(--color-third);
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading > section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 150px;
+  height: 80px;
+  font-family: 'aviny';
+  font-weight: 600;
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+.loading .myloader {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin: auto;
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+
+.loading .myloader .dot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  animation: 1.7s dotrotate cubic-bezier(0.775, 0.005, 0.31, 1) infinite;
+}
+
+.loading .myloader .dot:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.loading .myloader .dot:nth-child(2) {
+  animation-delay: 0.35s;
+}
+
+.loading .myloader .dot:nth-child(3) {
+  animation-delay: 0.45s;
+}
+
+.loading .myloader .dot:nth-child(4) {
+  animation-delay: 0.55s;
+}
+
+.loading .myloader .dot:after,
+.loading .myloader .dot .first {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #000;
+  border-radius: 50%;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.loading .myloader .dot .first {
+  background: #000;
+  margin-top: -4px;
+  animation: 1.7s dotscale cubic-bezier(0.775, 0.005, 0.31, 1) infinite;
+  animation-delay: 0.2s;
+}
+
+/* End Loading */
 /* Start Github Link */
 .github {
   position: absolute;
@@ -188,6 +269,29 @@ body {
 }
 
 /* End Setting */
+/* Start Color Animation */
+.color {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.color-animation {
+  width: 100vw;
+  height: 100vh;
+  border-radius: 0;
+  background-color: var(--color-third);
+}
+
+/* End Color Animation */
 /* Start Menu */
 .menu {
   font-family: 'iran-yekan';
@@ -216,6 +320,10 @@ body {
   font-size: 30px;
   margin: 15px 0;
   transition: all 0.6s linear !important;
+}
+
+.menu-ul-li:first-child {
+  color: var(--color-third);
 }
 
 .menu-ul-li:hover {
@@ -443,7 +551,6 @@ body {
 }
 
 .about-bottom-description p {
-  font-weight: bold;
   background-color: var(--color-second);
   width: 220px;
   height: 50px;
@@ -471,13 +578,14 @@ body {
 /* End About */
 /* Start Contact */
 .contact {
-  display: none;
-  padding: 50px 0;
+  direction: rtl;
   background-color: var(--color-second);
+  color: var(--color-first);
+  padding: 70px 100px;
   z-index: 999;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -105vw;
   width: 90vw;
   height: 100vh;
   overflow-y: auto;
@@ -540,7 +648,7 @@ body {
 }
 
 .skills-description {
-  font-family: 'iran-yekan-700';
+  font-family: cursive;
   direction: rtl;
   text-align: right;
   margin-top: 100px;
@@ -575,12 +683,14 @@ body {
 }
 
 /* End Skills */
-/* Animation */
+/* Start Music*/
 .audio {
   animation: audio 2s linear infinite;
   color: var(--color-third);
 }
 
+/* End Music*/
+/* Animations */
 @keyframes audio {
   0% {
     transform: rotate(0deg);
@@ -596,6 +706,47 @@ body {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes color {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dotrotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dotscale {
+  0%,
+  10% {
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
+    margin-top: -4px;
+  }
+  50% {
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    margin-top: 0;
+  }
+  90%,
+  100% {
+    width: 16px;
+    height: 16px;
+    margin-left: -8px;
+    margin-top: -4px;
   }
 }
 

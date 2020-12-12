@@ -7,10 +7,29 @@
     <title>سایت شخصی رضا عفتی مقدم</title>
     <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script>
+        document.querySelector(":root").style.setProperty('--color-third', localStorage.getItem('theme'));
+    </script>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
+<body onload="loaded()">
+    <!-- Start Loading -->
+    <div class="loading">
+        <section>
+            <div class="myloader">
+                <div class="dot">
+                    <div class="first"></div>
+                </div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            در حال بارگزاری ...
+        </section>
+    </div>
+    <!-- End Loading -->
+
     <!-- Start Github Link -->
     <a href="https://github.com/effati78/MPS" target="_blank" class="github"><i class="fab fa-github"></i></a>
     <!-- End Github Link -->
@@ -35,18 +54,26 @@
         </div>
     </div>
     <!-- End Setting -->
+
+    <!-- Start Color Animation -->
+    <div class="color">
+        <div class="color-animation"></div>
+    </div>
+    <!-- End Color Animation -->
+
     <!-- Start Menu -->
     <div class="menu">
         <ul class="menu-ul">
-            <li class="menu-ul-li"><i class="fas fa-home"></i></li>
-            <li id="li_about" class="menu-ul-li"><i class="fas fa-user-tie"></i></li>
-            <li id="li_skills" class="menu-ul-li"><i class="fas fa-copy"></i></li>
-            <li class="menu-ul-li"><i class="fas fa-envelope"></i></li>
+            <li class="home-item menu-ul-li"><i class="fas fa-home"></i></li>
+            <li data-item="about" class="item menu-ul-li"><i class="fas fa-user-tie"></i></li>
+            <li data-item="skills" class="item menu-ul-li"><i class="fas fa-copy"></i></li>
+            <li data-item="contact" class="item menu-ul-li"><i class="fas fa-envelope"></i></li>
             <li class="menu-ul-li music"><span class="menu-ul-li-icon audio"><i class="fas fa-compact-disc"></i></span>
                 <span>موزیک</span> </li>
         </ul>
     </div>
     <!-- End Menu -->
+
     <!-- Start Home -->
     <div id="particle-canvas">
         <div class="home">
@@ -65,7 +92,7 @@
     <!-- End Home -->
 
     <!-- Start About -->
-    <div class="about">
+    <div class="about section">
         <div class="about-top">
             <div class="about-top-title">
                 <p>درباره من</p>
@@ -102,7 +129,7 @@
     <!-- End About -->
 
     <!-- Start Contact -->
-    <div class="contact">
+    <div class="contact section">
         <div class="contact-title">
             <p>تماس</p>
         </div>
@@ -127,7 +154,7 @@
     <!-- End Contact -->
 
     <!-- Start Skills -->
-    <div class="skills">
+    <div class="skills section">
         <div class="skills-title">
             <p>مهارت ها</p>
         </div>

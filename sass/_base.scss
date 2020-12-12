@@ -6,8 +6,9 @@
 }
 
 @font-face{
-    src: url('../font/iran-yekan-300.woff2');
+    src: url('../font/IRANSansWeb.ttf');
     font-family: 'iran-yekan';
+    font-weight: 0;
 }
 
 @font-face{
@@ -24,12 +25,11 @@
 :root{
     --color-first: #fff;
     --color-second:  #0E0F10;
-    --color-third: #fc3;
+    --color-third: #25ca7f;
     --color-fourth: #070708;
 }
 
 a{
-    font-weight: bold;
     border-radius: 20px;
     text-decoration: none;
     color: #7e7e7e;

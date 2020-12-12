@@ -7,8 +7,91 @@
     background-size: cover;
 }
 
+/* Start Loading */
+.loading {
+    z-index: 1000;
+    background-color: $co-third;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &>section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 150px;
+        height: 80px;
+        font-family: 'aviny';
+        font-weight: 600;
+        font-size: 16px;
+        color: #000;
+        text-align: center;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .myloader {
+        width: 80px;
+        height: 80px;
+        position: relative;
+        margin: auto;
+        margin-top: 60px;
+        margin-bottom: 120px;
+    }
+
+    .myloader .dot {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 80px;
+        height: 80px;
+
+        animation: 1.7s dotrotate cubic-bezier(0.775, 0.005, 0.310, 1.000) infinite;
+    }
+
+    .myloader .dot:nth-child(1) {
+        animation-delay: 0.2s;
+    }
+
+    .myloader .dot:nth-child(2) {
+        animation-delay: 0.35s;
+    }
+
+    .myloader .dot:nth-child(3) {
+        animation-delay: 0.45s;
+    }
+
+    .myloader .dot:nth-child(4) {
+        animation-delay: 0.55s;
+    }
+
+    .myloader .dot:after,
+    .myloader .dot .first {
+        content: "";
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #000;
+        border-radius: 50%;
+        left: 50%;
+        margin-left: -4px;
+    }
+
+    .myloader .dot .first {
+        background: #000;
+        margin-top: -4px;
+        animation: 1.7s dotscale cubic-bezier(0.775, 0.005, 0.310, 1.000) infinite;
+        animation-delay: 0.2s;
+    }
+}
+
+/* End Loading */
+
 /* Start Github Link */
-.github{
+.github {
     position: absolute;
     top: 20px;
     left: 20px;
@@ -22,6 +105,7 @@
     width: 30px;
     height: 30px;
 }
+
 /* End Github Link */
 
 /* Start Setting */
@@ -91,6 +175,30 @@
 
 /* End Setting */
 
+/* Start Color Animation */
+.color {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    &-animation {
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0;
+        background-color: $co-third;
+    }
+}
+
+/* End Color Animation */
+
 /* Start Menu */
 .menu {
     font-family: 'iran-yekan';
@@ -118,6 +226,10 @@
             margin: 15px 0;
             transition: all 0.6s linear !important;
 
+            &:first-child {
+                color: $co-third;
+            }
+
             &:hover {
                 transition: all 0.6s linear !important;
                 color: $co-third;
@@ -134,7 +246,7 @@
             color: $co-third;
             font-weight: bold;
 
-            & .menu-ul-li-icon{
+            & .menu-ul-li-icon {
                 margin-bottom: 10px;
                 display: flex;
                 align-items: center;
@@ -271,12 +383,11 @@
                 max-height: 210px;
                 margin-left: 35px;
 
-                & .img-shadow{
+                & .img-shadow {
                     border-radius: 34% 66% 58% 42% / 37% 50% 50% 63%;
                 }
 
                 &-img {
-                    // $border-color : lighten($co-third, 2%);
                     border: 5px solid $co-third;
                     box-shadow: 0 0 50px -35px $co-third;
                     z-index: 1;
@@ -347,7 +458,6 @@
             justify-content: space-between;
 
             & p {
-                font-weight: bold;
                 background-color: $co-second;
                 width: 220px;
                 height: 50px;
@@ -379,13 +489,14 @@
 
 /* Start Contact */
 .contact {
-    display: none;
-    padding: 50px 0;
-    background-color: $co-second;
+    direction: rtl;
+    background-color: var(--color-second);
+    color: var(--color-first);
+    padding: 70px 100px;
     z-index: 999;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -105vw;
     width: 90vw;
     height: 100vh;
     overflow-y: auto;
@@ -449,7 +560,7 @@
     }
 
     &-description {
-        font-family: 'iran-yekan-700';
+        font-family: cursive;
         direction: rtl;
         text-align: right;
         margin-top: 100px;
@@ -485,18 +596,82 @@
 }
 
 /* End Skills */
-/* Animation */
-.audio{
+
+/* Start Music*/
+.audio {
     animation: audio 2s linear infinite;
-    // animation-direction: alternate;
     color: $co-third;
 }
 
-@keyframes audio{
-    0%{transform: rotate(0deg);}
-    25%{transform: rotate(90deg);}
-    50%{transform: rotate(180deg);}
-    75%{transform: rotate(270deg);}
-    100%{transform: rotate(360deg);}
+/* End Music*/
+
+/* Animations */
+@keyframes audio {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
+
+@keyframes color {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes dotrotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dotscale {
+
+    0%,
+    10% {
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        margin-top: -4px;
+    }
+
+    50% {
+        width: 8px;
+        height: 8px;
+        margin-left: -4px;
+        margin-top: 0;
+    }
+
+    90%,
+    100% {
+        width: 16px;
+        height: 16px;
+        margin-left: -8px;
+        margin-top: -4px;
+    }
+}
+
 /* End custom styles */
