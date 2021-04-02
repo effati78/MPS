@@ -592,6 +592,51 @@ body {
   transition: left 0.6s;
 }
 
+.contact::-webkit-scrollbar {
+  background-color: var(--color-second);
+  width: 5px;
+}
+
+.contact::-webkit-scrollbar-thumb {
+  background-color: var(--color-third);
+}
+
+.contact::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-third);
+}
+
+.contact::-o-scrollbar {
+  background-color: var(--color-second);
+  width: 5px;
+}
+
+.contact::-o-scrollbar-thumb {
+  background-color: var(--color-fourth);
+}
+
+.contact::-o-scrollbar-thumb:hover {
+  background-color: var(--color-fourth);
+}
+
+.contact-title {
+  font-family: 'aviny';
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.contact-title > p {
+  padding: 0 15px 10px 15px;
+  font-size: 35px;
+  display: inline;
+  border-bottom: 2px solid var(--color-third);
+}
+
+.contact .contact-links {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Courier New', Courier, monospace !important;
+}
+
 /* End Contact */
 /* Start Skills */
 .skills {
@@ -648,7 +693,7 @@ body {
 }
 
 .skills-description {
-  font-family: cursive;
+  font-family: 'Courier New', Courier, monospace;
   direction: rtl;
   text-align: right;
   margin-top: 100px;
